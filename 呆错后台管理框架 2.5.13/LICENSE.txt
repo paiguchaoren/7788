@@ -1,0 +1,128 @@
+关于呆错后台管理框架
+1、“呆错后台管理框架”是一款基于ThinkPHP、Bootstrap、Jquery的自适应后台管理框架，默认集成了权限、用户、路由、缓存、分类、标签、菜单栏、导航栏等常用功能。
+2、“呆错后台管理框架”是为了WEB应用敏捷开发和简化企业应用开发而诞生的，框架、模块、插件、模板均可独立升级和扩展。
+3、“呆错后台管理框架”框架保证全部开源、无任何加密代码！
+
+呆错后台管理框架使用协议
+1、本软件产品为免费软件；用户可以任意下载、安装、复制和散发本软件产品，但必须保留软件名字、版本、信息的正常显示以及相关连接的正常。
+
+呆错后台管理框架版权申明
+1、Copyright © 2019~2022 DAICUO.NET, All rights reserved.
+
+
+
+PHP >= 5.4
+PDO PHP Extension
+
+
+https://gitee.com/daicuo/framework
+
+后台入口（admin.php）、默认用户名（admin）、默认密码（admin888）
+前台入口（index.php）
+
+
+****************************************
+****************************************
+
+插件：
+呆错短视频系统 V1.4.5
+下载“video”的最新代码并解压上传至刚才新建的apps/video目录内。
+
+青苹果影视系统 V1.5.1
+下载“maccms”的最新代码并解压上传至刚才新建的apps/maccms目录内。
+
+呆错文章管理系统 V2.0.18
+下载“cms”的最新代码并解压上传至刚才新建的apps/cms目录内。
+
+呆错图床系统 V1.6.1
+下载“tuchuang”的最新代码并解压上传至刚才新建的apps/tuchuang目录内。
+
+数据库管理 V1.4.5
+下载“database”的最新代码并解压上传至刚才新建的apps/database目录内。
+
+MarkDown V1.4.3
+下载“markdown”的最新代码并解压上传至刚才新建的apps/markdown目录内。
+
+呆错用户系统 V1.6.28
+下载“user”的最新代码并解压上传至刚才新建的apps/user目录内。
+
+呆错广告插件 V1.2.1
+调用代码实例
+----------------------------
+{:adsenseShow("doubi250250")}
+统计点击次数
+如需统计点击次数，请在插件的JS里添加以下代码
+
+$(function() {
+    $(document).on("click", '[data-toggle="adsense"]', function(){
+        $.get(daicuo.config.root+'index.php?s=adsense/hits/index&id='+$(this).data('id'));
+    });
+});
+----------------------------
+下载“adsense”的最新代码并解压上传至刚才新建的apps/adsense目录内。
+
+
+CKEditor V1.4.5
+下载“ckeditor”的最新代码并解压上传至刚才新建的apps/ckeditor目录内。
+
+呆错支付插件 V1.2.5
+下载“pay”的最新代码并解压上传至刚才新建的apps/pay目录内。
+
+呆错单页插件 V1.1.3
+下载“page”的最新代码并解压上传至刚才新建的apps/page目录内。
+
+呆错附件管理系统 V1.4.5
+------------------
+上传钩子
+
+增加附件ID返回至上传接口，开发者可按需调用
+通过上传组件预留的钩子将附件信息保存到数据库
+使用方法
+
+网站后台 > 上传设置 > 本地附件URL接口，配置为（/attachment/index/path?val=）后则可使用原呆错框架的DcUrlImage或DcUrlAttachment函数动态处理
+修改apps/attachment/config.php 配置参数
+附件链接
+
+按ID {:DcUrl('attachment/index/id',['val'=>888])}
+按md5值 {:DcUrl('attachment/index/slug',['val'=>b6f0c8b5be782dca41051158258a4fcc])}
+按路径 {:DcUrl('attachment/index/path',['val'=>20220616/96466f06dc822b5ca64304cda2117acb.png])}
+附件积分
+
+上传附件时设置所需积分（需编辑器支持）
+网站后台 > 系统 > 附件管理 > 编辑对应的附件
+------------------
+下载“attachment”的最新代码并解压上传至刚才新建的apps/attachment目录内。
+
+
+FTP存储插件 V1.1.4
+下载“ftposs”的最新代码并解压上传至刚才新建的apps/ftposs目录内。
+
+
+阿里云存储插件 V1.2.2
+下载“alioss”的最新代码并解压上传至刚才新建的apps/alioss目录内。
+
+呆错HTMLPurifier V1.0.2
+------------------
+使用方法
+DaiCuo已独立支持对HTML Purifier的调用，有需要的用户只需安装后使用htmlPurifier函数对代码过行过滤输出。
+
+htmlPurifier($html)
+扩展配置
+如需自定义保留的html标签，只需要修改apps/purifier/config.php，照里面的注释参考HTML Purifier官网的配置即可。
+
+CKEditor
+CKEditor1.2以上版本在输出编辑器代码时会自动检测是否已安装HTML Purifier插件，如已安装将自动加载htmlPurifier安全办输出函数进行过滤。
+--------------------
+下载“purifier”的最新代码并解压上传至刚才新建的apps/purifier目录内。
+
+
+呆错阿里云短信 V1.0.2
+下载“alisms”的最新代码并解压上传至刚才新建的apps/alisms目录内。
+
+呆错PHPMailer邮件 V1.0.4
+下载“email”的最新代码并解压上传至刚才新建的apps/email目录内。
+
+****************************************
+****************************************
+模板
+
